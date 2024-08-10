@@ -1,0 +1,18 @@
+extends ../layout
+
+block content
+    if errorMessage 
+        p=errorMessage
+    div.form-box
+        img(src="/" + loggedInUser.avatarUrl, width="100", height="100").edit-profile_image
+        form(method="post", enctype="multipart/form-data").form
+            // loggedInUser: Local Variable
+            label(for="avatar") Avatar
+            input(type="file", id="avatar" name="avatar" accept=".png, .jpg, .jepg")
+            input(type="email", name="email", required, placeholder="Email" value=loggedInUser.email) 
+            input(type="text", name="username", placeholder="Username" value=loggedInUser.username) 
+            input(type="text", name="name" required, placeholder="Name" value=loggedInUser.name)
+            input(type="submit", value="Edit")
+            if !loggedInUser.socialOnly
+                hr
+                a(href="change-password") Change Password 

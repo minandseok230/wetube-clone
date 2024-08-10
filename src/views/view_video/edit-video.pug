@@ -1,0 +1,11 @@
+extends ../layout
+
+block content
+    div.form-box
+        form(method="post").form
+            input(name="title" type="text" placeholder="Title" required, minLength=1, maxLength=50, value=video.title)
+            input(name="description" type="text" placeholder="Description" maxLength=1000, value=video.description)
+            input(name="hashtags" type="text" placeholder="Hashtags(separate by comma)", value=video.hashtags.map((hashtag) => (hashtag.startsWith("#") ? hashtag.slice(1) : hashtag)).join())
+            input(type="submit" value="Edit Video")
+
+        

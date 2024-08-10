@@ -1,0 +1,28 @@
+.record-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    #preview {
+        width: 50%;
+        margin-bottom: 10px;
+    }
+    #actionBtn {
+        font-size: 15px;
+        border-radius: 5px;
+        padding: 10px;
+        box-sizing: border-box;
+        width: 100%;
+        align-self: center;
+        background-color: #2b2d42;
+        color: white;
+        border-radius: 10px;
+        &::placeholder {
+            color: #778da9;
+        }
+        &:last-child {
+            width: 30%;
+            align-self: center;
+        }
+    }    
+}

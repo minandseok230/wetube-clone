@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+    if errorMessage 
+        p=errorMessage
+    div.form-box
+        form(method="post").form
+            input(type="email", name="email", required, placeholder="Email") 
+            input(type="text", name="username", placeholder="Username") 
+            input(type="password", name="password" required, placeholder="Password") 
+            input(type="password", name="password2" required, placeholder="Confirm Password") 
+            input(type="text", name="name" required, placeholder="Name")
+            input(type="submit", value="Join")
+        br
+    div.form__sub
+        a(href="/login").form__sub__a Login

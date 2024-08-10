@@ -1,0 +1,9 @@
+extends ../layout
+include ../mixins/video
+
+block content
+    div.home__content
+        each video in videos
+            +video(video)
+        else
+            span.home__empty__message No videos

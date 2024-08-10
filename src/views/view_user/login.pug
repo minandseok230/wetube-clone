@@ -1,0 +1,15 @@
+extend ../layout
+
+block content 
+    if errorMessage 
+        p=errorMessage
+    div.form-box
+        form(method="post").form
+            input(type="text", name="username", placeholder="Username") 
+            input(type="password", name="password" required, placeholder="Password") 
+            input(type="submit", value="Login")
+    div.form__sub
+        // 깃 허브 OAuth applications
+        a(href="/user/github/login").form__sub__a Continue with Github
+        br
+        a(href="join").form__sub__a Join

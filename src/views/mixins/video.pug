@@ -1,0 +1,11 @@
+mixin video(v)
+    div.home__video
+        div.home__video__image(style=`background-image:url(${v.thumbUrl});background-size:cover;background-position:center;`)
+        div.home__video__sub
+            h4.home__video__title
+                a(href=`/video/${v._id}`)=v.title
+            span.home__video__owner #{v.owner.username}
+        div.home__video__hashtag
+            each hashtag in v.hashtags
+                span=hashtag
+        span.home__video__views #{v.meta.views} 회

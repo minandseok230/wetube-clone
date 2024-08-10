@@ -1,0 +1,13 @@
+extends ../layout
+include ../mixins/video
+
+block content 
+    form(method="get").search__form
+        div.search__input-wrapper
+            input(type="text" name="searchValue" placeholder="Search By Title")
+            i.fa-solid.fa-magnifying-glass
+        input(type="submit", value="Search")
+
+    div.home__content
+        each video in videos
+            +video(video)

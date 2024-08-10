@@ -1,0 +1,23 @@
+header
+    a(href="/").header__logo
+        i.fa-brands.fa-youtube(style='color: #ff0000;')
+    nav.header__nav
+        ul.header__nav__ul
+            li
+                a(href="/search")
+                    i.fa-solid.fa-magnifying-glass
+            // loggedIn: Local Variable
+            if loggedIn
+                li 
+                    a(href="/user/logout") Log Out
+                li 
+                    a(href="/video/upload") Upload
+                li 
+                    a(href="/user/edit") Edit Profile
+                li 
+                    a(href=`/user/${loggedInUser._id}`) #{loggedInUser.username}
+            else 
+                li 
+                    a(href="/join") Join
+                li 
+                    a(href="/login") Login
